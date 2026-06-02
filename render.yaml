@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: veltrix-backend
+    env: node
+    plan: starter
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: USE_FILE_DB
+        value: "false"

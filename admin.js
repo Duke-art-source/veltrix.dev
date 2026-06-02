@@ -3,7 +3,8 @@ const refreshBtn = document.getElementById('refresh-btn');
 const tableBody = document.getElementById('inquiry-table-body');
 const emptyState = document.getElementById('empty-state');
 
-const apiUrl = 'http://localhost:3000/api/inquiries';
+const apiBaseUrl = window.API_BASE_URL || 'http://localhost:3000';
+const apiUrl = `${apiBaseUrl}/api/inquiries`;
 
 const setStatus = (message, isError = false) => {
   statusEl.textContent = message;

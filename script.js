@@ -157,8 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const contactForm = document.getElementById('contact-form');
     const formFeedback = document.getElementById('form-feedback');
+    const apiBaseUrl = window.API_BASE_URL || 'http://localhost:3000';
 
     if (contactForm) {
+        contactForm.action = `${apiBaseUrl}/api/contact`;
         contactForm.addEventListener('submit', async (event) => {
             // Prevent default routing so we can handle the UI states gracefully
             event.preventDefault();
@@ -180,8 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     scope_summary: document.getElementById('scope-summary')?.value || ''
                 };
 
-                const response = await fetch(contactForm.action, {
-                    method: contactForm.method,
+                const response = await fetch(`${apiBaseUrl}/api/contact`, {
+                    method: 'POST',
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
