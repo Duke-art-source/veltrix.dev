@@ -173,14 +173,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                // Submit logic configured for services like Formspree
-                const formData = new FormData(contactForm);
+                const payload = {
+                    name: document.getElementById('user-name')?.value || '',
+                    email: document.getElementById('user-email')?.value || '',
+                    project_type: document.getElementById('project-type')?.value || '',
+                    scope_summary: document.getElementById('scope-summary')?.value || ''
+                };
+
                 const response = await fetch(contactForm.action, {
                     method: contactForm.method,
-                    body: formData,
                     headers: {
-                        'Accept': 'application/json'
-                    }
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
                 });
 
                 if (response.ok) {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veltrix Admin - Inquiry List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-gray-100 min-h-screen">
+    <div class="max-w-6xl mx-auto p-6">
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <div>
+                <h1 class="text-3xl font-black text-white">Veltrix Admin</h1>
+                <p class="text-sm text-slate-400 mt-2">Saved inquiries from the contact form.</p>
+            </div>
+            <div class="flex gap-3">
+                <a href="index.html" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded font-semibold text-sm">Back to Portfolio</a>
+                <button id="refresh-btn" class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-4 py-2 rounded font-semibold text-sm">Refresh</button>
+            </div>
+        </header>
+
+        <div id="status" class="mb-6 text-sm text-slate-300"></div>
+
+        <div class="overflow-x-auto bg-slate-900 rounded-3xl border border-slate-800 shadow-xl">
+            <table class="min-w-full text-left border-collapse">
+                <thead class="bg-slate-800 text-slate-300 uppercase text-xs tracking-wider">
+                    <tr>
+                        <th class="px-4 py-3">Name</th>
+                        <th class="px-4 py-3">Email</th>
+                        <th class="px-4 py-3">Project</th>
+                        <th class="px-4 py-3">Submitted</th>
+                    </tr>
+                </thead>
+                <tbody id="inquiry-table-body" class="text-sm text-slate-100"></tbody>
+            </table>
+        </div>
+
+        <div id="empty-state" class="mt-8 p-6 bg-slate-900 rounded-3xl border border-slate-800 text-slate-400 hidden">
+            No inquiries have been submitted yet. Use the contact form to create a test inquiry.
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -42,6 +42,7 @@
             <a href="#projects" class="hover:text-red-500 transition-colors">Our Work</a>
             <a href="#about" class="hover:text-red-500 transition-colors">About Us</a>
             <a href="#contact" class="hover:text-red-500 transition-colors">Contact</a>
+            <a href="admin.html" class="hover:text-red-500 transition-colors">Admin</a>
             
             <button id="theme-toggle" type="button" class="text-gray-500 dark:text-amber-400 hover:text-yellow-500 ml-2 cursor-pointer transition-colors" aria-label="Toggle dark mode layout">
                 <i id="theme-icon" class="fas fa-moon" aria-hidden="true"></i>
@@ -63,6 +64,7 @@
             <a href="#projects" class="hover:text-red-500 mobile-link">Our Work</a>
             <a href="#about" class="hover:text-red-500 mobile-link">About Us</a>
             <a href="#contact" class="hover:text-red-500 mobile-link">Contact</a>
+            <a href="admin.html" class="hover:text-red-500 mobile-link">Admin</a>
             <div class="h-px bg-gray-100 dark:bg-slate-800 my-2"></div>
             <div class="flex justify-between items-center">
                 <span class="text-sm text-gray-500">Switch Visual Theme</span>
@@ -361,8 +363,8 @@
                     <!-- Submission UI alerts hook here -->
                     <div id="form-feedback" class="hidden mb-4 p-4 text-sm rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"></div>
 
-                    <!-- Replace your-form-id with the actual Formspree endpoint or backend URL -->
-                    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
+                    <!-- Replace this URL with your deployed backend URL when ready -->
+                    <form id="contact-form" action="http://localhost:3000/api/contact" method="POST" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label for="user-name" class="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-2">Your Name</label>
